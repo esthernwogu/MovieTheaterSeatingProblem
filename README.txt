@@ -47,9 +47,29 @@ My Solution:
         -The further away from the screen, the better the movie experience - next priority
         -Number of reservation requests is less than number of seats available in the theater
         
+    
+    Algorithm For Asssigning Seats:
+		Keep record of the number of seats available
+        - For each reservation:
+            -check for the latest row (furthest from the screen) that can take entire group
+                -if row to fit all is found: 
+                    -find the first empty seat in the row 
+					- assign seat, fill up consecutively
+					- decrease the number of available seats in row respectively
+                -else:
+					-do:
+                    	-divide group by 2 
+                    	-check for latest rows to fit subgroups
+					-until rows to fit subgroups are found
+					-find nearest empty seat and fill up rows consecutively
+					-decrease the number of available seats in row respectively
+					
     Building The Solutions
         -Fork and Clone this Repository
-        -To run on the command line, type: bin/SeatAssignment sample-input.txt
+        -To run on the command line, type: python __main__.py sample-input.txt
+        -It is preferable to type out the full path for __main__.py and the input file
+        
+    
 
 
 
